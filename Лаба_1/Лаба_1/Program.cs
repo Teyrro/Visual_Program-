@@ -14,11 +14,18 @@ namespace lab1
             int[] a = { 5, 3, 4 };
             Console.WriteLine("Очередь: {0}, {1}, {2}", a[0], a[1], a[2]);
 
-            int WasteTime = ((int)test.QueueTime(a, cashbox));
+            try
+            {
+                int WasteTime = ((int)test.QueueTime(a, cashbox));
+                Console.WriteLine(
+                    $"Время затраченное на всех покупателей:  {WasteTime}"
+                    );
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
-            Console.WriteLine(
-                $"Время затраченное на всех покупателей:  {WasteTime}"
-                );
         }
     }
 }
