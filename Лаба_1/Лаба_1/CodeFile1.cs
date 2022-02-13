@@ -3,9 +3,9 @@
 
     class HW1
     {
-        public long QueueTime(int[] customers, int n)
+        public static long QueueTime(int[] customers, int n = 2)
         {
-            if (n < 1) throw new Exception("Введите корректное количество касс");
+            if (n < 1) throw new Exception("Введите корректное количество касс обслуживания");
 
             int[] cashbox = new int[n];
             int maxTime = 0;

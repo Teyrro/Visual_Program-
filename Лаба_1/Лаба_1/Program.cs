@@ -6,9 +6,9 @@ namespace lab1
     {
         static void Main(string[] args)
         {
-            HW1 test = new HW1();
+            
 
-            Console.Write("Введите кол-во касс: ");
+            Console.Write("Введите кол-во касс обслуживания: ");
             int cashbox = Convert.ToInt32(Console.ReadLine());
 
             int[] a = { 5, 3, 4 };
@@ -16,9 +16,8 @@ namespace lab1
 
             try
             {
-                int WasteTime = ((int)test.QueueTime(a, cashbox));
                 Console.WriteLine(
-                    $"Время затраченное на всех покупателей:  {WasteTime}"
+                    $"Время затраченное на всех покупателей:  {HW1.QueueTime(a, cashbox)}"
                     );
             }
             catch (Exception ex)
