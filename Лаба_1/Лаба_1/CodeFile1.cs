@@ -24,17 +24,16 @@
 
             for (int i = 0; i < customers.Length; i++)
             {
-                int[] min = new int[2] { cashbox[0], 0 };
+                int min = 0;
                 for (int j = 1; j < cashbox.Length; j++)
                 {
-                    if (cashbox[j] < min[0])
+                    if (cashbox[j] < cashbox[min])
                     {
-                        min[0] = cashbox[j];
-                        min[1] = j;
+                        min = j;
                     }
 
                 }
-                cashbox[min[1]] += customers[i];
+                cashbox[min] += customers[i];
             }
 
             maxTime = cashbox[0];
