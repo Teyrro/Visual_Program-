@@ -6,7 +6,7 @@ namespace lab1
     {
         static void Main(string[] args)
         {
-            
+
 
             Console.Write("Введите кол-во касс обслуживания: ");
             int cashbox = Convert.ToInt32(Console.ReadLine());
@@ -17,7 +17,7 @@ namespace lab1
             try
             {
                 Console.WriteLine(
-                    $"Время затраченное на всех покупателей:  {HW1.QueueTime(a, cashbox)}"
+                    $"Время затраченное на всех покупателей:  {HW1.QueueTime_2(a, cashbox)}"
                     );
             }
             catch (Exception ex)

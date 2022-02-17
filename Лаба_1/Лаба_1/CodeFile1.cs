@@ -3,6 +3,7 @@
 
     class HW1
     {
+        // Своя реализация
         public static long QueueTime(int[] customers, int n = 2)
         {
             if (n < 1) throw new Exception("Введите корректное количество касс обслуживания");
@@ -45,5 +46,34 @@
 
             return maxTime;
         }
+
+
+        // Чужая реализация доработанная под свою идею
+        public static long QueueTime_2(int[] customers, int n)
+        {
+            if (n < 1) throw new Exception("Введите корректное количество касс обслуживания");
+
+            int tmpTime, index = 0;
+            for (int i = n; i < customers.Length;)
+            {
+                for (int j = 1; j < n; j++)
+                    if (customers[index] > customers[j])
+                        index = j;
+                if (i != customers.Length)
+                {
+                    customers[index] += customers[i];
+                    i++;
+                }
+            }
+
+            tmpTime = customers[0];
+            int remaining = n > customers.Length ? customers.Length : n;
+            for (int i = 1; i < remaining; i++)
+                if (tmpTime < customers[i])
+                    tmpTime = customers[i];
+            
+            return tmpTime;
+        }
+
     }
 }
